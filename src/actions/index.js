@@ -24,3 +24,14 @@ export function createPost(values, callback) {
     payload: request
   };
 }
+
+export const FETCH_POST = 'fetch_post';
+
+export function fetchPost(id) {
+   const request = axios.get(`${BASE_URL}/posts/${id}/${API_KEY}`)
+
+   return {
+     type: FETCH_POST,
+     payload: request
+   }
+}
